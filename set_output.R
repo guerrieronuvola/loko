@@ -1,3 +1,5 @@
+# This function will fetch the selected output parameter from raw data
+
 set_output <- function(output) {
 
 if(!is.numeric(output)) {
@@ -5,8 +7,6 @@ if(!is.numeric(output)) {
 	} else { 
 		num <- output
 	}
-
-print(num)
 
 loko_input <- loko[,1:4]
 loko_output <- loko[,num]
