@@ -12,3 +12,5 @@ col_names <- c("sex", "age", "GMFCS", "X.GMFM.tot.T0", "delta.GMFM.D", "delta.GM
 "delta.6minWT", "delta.stance.medio.norm", "delta.gait.velocity.norm", "delta.step.length.media.norm")
 
 colnames(loko) <- col_names
+
+loko$sex <- as.numeric(loko$sex)
