@@ -2,6 +2,8 @@ library(caret)
 library(kernlab)
 library(neuralnet)
 
+make_net <- function(lokonet, nNascosti = c(1,2,3,4,5,6), tsld = tsld<-c(0.20,0.15,0.1,0.020,0.015,0.010,0.0015,0.001,0.0001)) {
+
 
 inTrain <- createDataPartition(y=lokonet[,5] , p=0.75, list=FALSE)
 
@@ -10,9 +12,6 @@ training <- lokonet[inTrain,]
 testing <- lokonet[-inTrain,]
 
 
-tsld<-c(0.20,0.15,0.1,0.020,0.015,0.010,0.0015,0.001,0.0001)
-
-nNascosti <- c(1, 2, 3, 4, 5, 11, 29)
 neuroni <- c() 						#vettore delle possibili combinazioni del numero di neuroni #nascosti
 thresholds <- rep(tsld,length(nNascosti))
 rp <- 6
@@ -57,3 +56,6 @@ riassunto<-riassunto[order(riassunto[,3]),]
 
 
 best<-subset(riassunto,riassunto[,3]==min(riassunto[,3]))
+
+
+}
